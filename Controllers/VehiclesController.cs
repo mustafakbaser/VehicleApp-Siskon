@@ -64,11 +64,13 @@ namespace VehicleApp_SiskonAutomation.Controllers
             {
                 return NotFound();
             }
-            await _repository.DeleteVehicleAsync(id);
 
-            return RedirectToAction(nameof(Index));
+            //await _repository.DeleteVehicleAsync(id);
+            return View(vehicle);
+            //return RedirectToAction(nameof(Index));
         }
 
+        // Vehicle/DeleteConfirmed/{id}
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
