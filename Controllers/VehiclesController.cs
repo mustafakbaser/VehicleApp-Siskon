@@ -56,6 +56,7 @@ namespace VehicleApp_SiskonAutomation.Controllers
             return View(vehicle);
         }
 
+        // Delete Vehicle Method
         public async Task<IActionResult> Delete(string id)
         {
             var vehicle = await _repository.GetVehicleByPlateAsync(id);
@@ -63,7 +64,9 @@ namespace VehicleApp_SiskonAutomation.Controllers
             {
                 return NotFound();
             }
-            return View(vehicle);
+            await _repository.DeleteVehicleAsync(id);
+
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost, ActionName("Delete")]
