@@ -1,4 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+
+using VehicleApp_SiskonAutomation.Data;
+using VehicleApp_SiskonAutomation.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// DbContext - DI
+builder.Services.AddDbContext<VehicleContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Repository - DI
+builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
