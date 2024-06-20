@@ -1,8 +1,12 @@
-﻿namespace VehicleApp_SiskonAutomation.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace VehicleApp_SiskonAutomation.Models
 {
     public class Vehicle
     {
+        [Key]
         public string Plate { get; set; }
+
         public string Nickname { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
