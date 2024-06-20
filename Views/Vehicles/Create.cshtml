@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@* UI - Create Vehicle View *@
+
+@model VehicleApp_SiskonAutomation.Models.Vehicle
+
+<div class="container text-center">
+    <!-- Logo -->
+    <div class="header">
+        <img src="~/images/logo.png" alt="Logo">
+    </div>
+
+    <h2 style="margin-bottom:30px;">Create Vehicle</h2>
+</div>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Plate"></label>
+        <input asp-for="Plate" class="form-control" placeholder="Ex: 35S001" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Nickname"></label>
+        <input asp-for="Nickname" class="form-control" placeholder="Ex: Karsiyaka Vehicle, Ucyol Vehicle, Sales Vehicle, Automation Technician Vehicle etc." />
+    </div>
+    <div class="form-group">
+        <label asp-for="Brand"></label>
+        <input asp-for="Brand" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Model"></label>
+        <input asp-for="Model" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ModelYear"></label>
+        <input asp-for="ModelYear" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="VehicleType"></label>
+        <input asp-for="VehicleType" class="form-control" placeholder="Bus, Minibus, Midibus, etc."/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Color"></label>
+        <input asp-for="Color" class="form-control" />
+    </div>
+    <div class="form-group form-check">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

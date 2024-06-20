@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* UI - Delete Vehicle View *@
+
+@model VehicleApp_SiskonAutomation.Models.Vehicle
+
+<div class="container text-center">
+    <!-- Logo -->
+    <div class="header">
+        <img src="~/images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Title -->
+    <h1 class="display-4">Delete Vehicle</h1>
+    <h4>Are you sure you want to delete this vehicle?</h4>
+</div>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Plate
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Plate
+        </dd>
+        <dt class="col-sm-2">
+            Nickname
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Nickname
+        </dd>
+        <dt class="col-sm-2">
+            Brand
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Brand
+        </dd>
+        <dt class="col-sm-2">
+            Model
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Model
+        </dd>
+        <dt class="col-sm-2">
+            Model Year
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ModelYear
+        </dd>
+        <dt class="col-sm-2">
+            Vehicle Type
+        </dt>
+        <dd class="col-sm-10">
+            @Model.VehicleType
+        </dd>
+        <dt class="col-sm-2">
+            Color
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Color
+        </dd>
+        <dt class="col-sm-2">
+            Is Active
+        </dt>
+        <dd class="col-sm-10">
+            @Model.IsActive
+        </dd>
+    </dl>
+
+    <form asp-action="Index" method="post">
+        <input type="hidden" asp-for="Plate" />
+        <button type="submit" class="btn btn-danger">Delete</button> |
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>

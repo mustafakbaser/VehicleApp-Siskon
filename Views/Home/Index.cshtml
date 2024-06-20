@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container text-center">
+    <!-- Logo -->
+    <div class="header">
+        <img src="~/images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Title -->
+    <h1 class="display-4">Welcome to Siskon Automation</h1>
+    <h2 class="display-5">This service developed by Mustafa Kürşad BAŞER</h2>
+
+    <!-- Content -->
+    <div class="content">
+        <div>
+            <h2>Vehicle Management</h2>
+            <div class="btn-group">
+                <a class="btn btn-custom btn-lg" href="/Vehicles/Index">View All Vehicles</a>
+                <a class="btn btn-custom btn-lg" href="/Vehicles/Create">Create New Vehicle</a>
+            </div>
+        </div>
+    </div>
 </div>

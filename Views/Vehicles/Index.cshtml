@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* UI Index *@
+
+@model IEnumerable<VehicleApp_SiskonAutomation.Models.Vehicle>
+
+<div class="container text-center">
+    <!-- Logo -->
+    <div class="header">
+        <img src="~/images/logo.png" alt="Logo">
+    </div>
+
+    <!-- Title -->
+    <h1 class="display-4">Vehicle Management</h1>
+    <p style="font-size:18px;">This service developed by Mustafa Kürşad BAŞER</p>
+
+
+    <p style="margin:50px;">
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+</div>
+
+<div class="table-responsive" style="margin-bottom:60px;">
+    <table class="table table-striped table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Plate</th>
+                <th>Nickname</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Model Year</th>
+                <th>Vehicle Type</th>
+                <th>Color</th>
+                <th>Active</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Plate</td>
+                    <td>@item.Nickname</td>
+                    <td>@item.Brand</td>
+                    <td>@item.Model</td>
+                    <td>@item.ModelYear</td>
+                    <td>@item.VehicleType</td>
+                    <td>@item.Color</td>
+                    <td>@(item.IsActive ? "Yes" : "No")</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Plate" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Plate" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
